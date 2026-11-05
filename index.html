@@ -307,11 +307,9 @@ img{display:block;max-width:100%}
   <section class="sec gift reveal">
     <h2 class="title">OBSEQUIOS</h2>
     <svg class="orn" viewBox="0 0 190 22" fill="none" stroke="currentColor" stroke-width="1"><path d="M4 11h64M122 11h64"/><circle cx="72" cy="11" r="1.6" fill="currentColor"/><circle cx="118" cy="11" r="1.6" fill="currentColor"/><path d="M84 15l-2-8 6 4 7-7 7 7 6-4-2 8z" fill="currentColor" stroke="none"/><path d="M84 18h22"/></svg>
-    <p class="lead" style="font-style:italic;max-width:330px;margin:0 auto">Tu presencia es mi mejor regalo. Si deseas tener un detalle conmigo, puedes hacerlo a través de esta cuenta:</p>
-    <svg class="bank" viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M8 32L40 14l32 18"/><path d="M12 32h56M14 62h52M10 70h60"/><path d="M20 36v22M32 36v22M48 36v22M60 36v22"/></svg>
-    <b class="gt">CUENTA BANCARIA</b>
-    <div class="iban"><small>IBAN</small><span id="ibanTxt">IT48 R030 6909 5041 0000 0018 896</span></div>
-    <button class="btn oro" onclick="copyIban()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h3"/></svg>COPIAR IBAN</button>
+    <p class="lead" style="font-style:italic;max-width:330px;margin:0 auto">Tu presencia es mi mejor regalo. Si deseas tener un detalle conmigo, habrá</p>
+    <svg class="bank" viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><rect x="10" y="26" width="60" height="40" rx="3"/><path d="M10 28l30 20 30-20"/><path d="M10 64l22-18M70 64L48 46"/><path d="M40 8v10M34 12l6 6 6-6" opacity=".7"/></svg>
+    <b class="gt">LLUVIA DE SOBRES</b>
   </section>
 
   <!-- GALERÍA -->
@@ -381,14 +379,12 @@ img{display:block;max-width:100%}
   <img id="lbImg" alt="Foto de Kaycee">
   <button class="lb-nav lb-next" onclick="lbStep(1)" aria-label="Siguiente">›</button>
 </div>
-<div class="toast" id="toast">IBAN COPIADO</div>
 <div id="musicBar"><button id="musicBtn" onclick="toggleMusic()" aria-label="Pausar o reproducir música"><span id="musicIcon">♪</span></button></div>
 <div id="yt"></div>
 
 <script>
 const VIDEO_ID='UARIg7944NY';
 const WHATSAPP='393280120246';
-const IBAN='IT48R0306909504100000018896';
 (function(){const c=document.getElementById('stage');[[14,8,14,2.8,0],[86,10,13,3,1.1],[30,30,11,2.4,.5],[72,28,12,2.7,1.6],[50,6,12,2.6,1.9],[85,80,10,2.5,1.3],[15,85,11,2.4,.6],[60,90,12,2.9,.3]].forEach(([x,y,s,d,dl])=>{const e=document.createElement('span');e.className='spark';e.textContent='✦';e.style.left=x+'%';e.style.top=y+'%';e.style.fontSize=s+'px';e.style.setProperty('--d',d+'s');e.style.setProperty('--dl',dl+'s');c.appendChild(e);});})();
 (function(){const fx=document.getElementById('fx');const n=innerWidth<600?12:18;
   for(let i=0;i<n;i++){const d=document.createElement('span');d.className='petal'+(i%3===0?' w':'');d.style.left=Math.random()*100+'%';
@@ -424,8 +420,6 @@ function addToCalendar(){
   const url=URL.createObjectURL(new Blob([ics],{type:'text/calendar;charset=utf-8'}));
   const a=document.createElement('a');a.href=url;a.download='XV-Kaycee-Melanie.ics';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);}
 function toast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('on');setTimeout(()=>t.classList.remove('on'),1600);}
-function copyIban(){const ok=()=>toast('IBAN COPIADO');const fb=()=>{const ta=document.createElement('textarea');ta.value=IBAN;ta.setAttribute('readonly','');ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();try{document.execCommand('copy');ok();}catch(e){toast('MANTÉN PRESIONADO PARA COPIAR');}ta.remove();};
-  if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(IBAN).then(ok,fb);}else fb();}
 
 let asisteVal='';
 function pickOpt(b){document.querySelectorAll('.opt').forEach(o=>{o.classList.remove('sel');o.setAttribute('aria-checked','false');});b.classList.add('sel');b.setAttribute('aria-checked','true');asisteVal=b.dataset.v;}
